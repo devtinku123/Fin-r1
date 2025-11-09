@@ -1,0 +1,7 @@
+{
+  "name": "Fin-R1 Assistant",
+  "description": "An AI assistant specialized in complex financial reasoning, code generation, and professional knowledge, featuring voice-to-text and translation capabilities.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

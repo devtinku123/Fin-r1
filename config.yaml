@@ -1,0 +1,35 @@
+
+# Configuration for the Fin-R1 Model Training
+
+# General Settings
+seed: 42
+device: 'cuda' # 'cuda' or 'cpu'
+checkpoint_dir: 'checkpoints'
+log_interval: 10 # Log training progress every N batches
+
+# Dataset Settings
+# NOTE: Create dummy data or point these to your actual data files.
+train_data_path: 'data/sample_data.csv'
+val_data_path: 'data/sample_data.csv'
+sequence_length: 5 # Number of time steps to look back
+target_column: 'target'
+feature_columns: ['feature_1', 'feature_2', 'feature_3', 'feature_4']
+
+# Model Settings
+model_name: 'FinR1Transformer'
+input_dim: 4      # Should match the number of feature_columns
+model_dim: 128    # d_model in Transformer
+n_heads: 8        # Number of attention heads
+n_layers: 4       # Number of Transformer Encoder layers
+dropout: 0.1
+
+# Training Hyperparameters
+learning_rate: 0.0001
+batch_size: 32
+epochs: 25
+weight_decay: 0.01
+grad_clip: 1.0 # Gradient clipping value
+
+# Scheduler Settings (for ReduceLROnPlateau)
+scheduler_factor: 0.1
+scheduler_patience: 3
